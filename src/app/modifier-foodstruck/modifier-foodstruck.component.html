@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modifier un Food Truck</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .form-container {
+      max-width: 500px;
+      margin: 50px auto;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-container h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+    }
+
+    input[type="file"] {
+      padding: 3px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+<div class="form-container">
+  <h2>Modifier un Food Truck</h2>
+  <form id="edit-foodtruck-form" action="/update-foodtruck" method="POST" enctype="multipart/form-data">
+    <!-- Nom du Food Truck -->
+    <div class="form-group">
+      <label for="name">Nom du Food Truck</label>
+      <input type="text" id="name" name="name" placeholder="Nom du food truck" required>
+    </div>
+
+    <!-- Type de Cuisine -->
+    <div class="form-group">
+      <label for="type">Type de Cuisine</label>
+      <select id="type" name="type" required>
+        <option value="">Sélectionner un type</option>
+        <option value="burger">Burger</option>
+        <option value="pizza">Pizza</option>
+        <option value="asiatique">Asiatique</option>
+        <option value="mexicain">Mexicain</option>
+        <option value="végétarien">Végétarien</option>
+        <option value="desserts">Desserts</option>
+      </select>
+    </div>
+
+    <!-- Logo -->
+    <div class="form-group">
+      <label for="logo">Logo</label>
+      <input type="file" id="logo" name="logo" accept="image/*">
+    </div>
+
+    <!-- Localisation -->
+    <div class="form-group">
+      <label for="location">Localisation</label>
+      <input type="text" id="location" name="location" placeholder="Adresse ou emplacement" required>
+    </div>
+
+    <!-- Bouton de soumission -->
+    <button type="submit">Enregistrer les modifications</button>
+  </form>
+</div>
+</body>
+</html>
+
