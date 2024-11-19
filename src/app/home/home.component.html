@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div class="food-trucks">
+  <h1>Food Trucks</h1>
+  <ul>
+    <li *ngFor="let truck of foodTrucks">
+      <img [src]="truck.logo" alt="{{ truck.name }} logo" class="logo" />
+      <h3>{{ truck.name }}</h3>
+      <p>Cuisine: {{ truck.cuisine }}</p>
+      <p>Location: {{ truck.location }}</p>
+    </li>
+  </ul>
+</div>
